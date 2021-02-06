@@ -22,6 +22,7 @@ namespace Business.Concrete
             {
                 if (car.DailyPrice > 0)
                 {
+                    Console.WriteLine("Kayıt başarılı");
                     _carDal.Add(car);
                 }
                 else
@@ -33,7 +34,7 @@ namespace Business.Concrete
             {
                 Console.WriteLine("Araba ismi minimum 2 karakter olmalıdır");
             }
-
+            
         }
 
         public void Delete(Car car)

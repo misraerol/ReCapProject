@@ -13,7 +13,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         public void Add(Color entity)
         {
-            using (NewNorthwindContext context = new NewNorthwindContext())
+            using (RentCarDbContext context = new RentCarDbContext())
             {
                 var addedEntity = context.Entry(entity);
                 addedEntity.State = EntityState.Added;
@@ -23,7 +23,7 @@ namespace DataAccess.Concrete.EntityFramework
 
         public void Delete(Color entity)
         {
-            using (NewNorthwindContext context = new NewNorthwindContext())
+            using (RentCarDbContext context = new RentCarDbContext())
             {
                 var deletedEntity = context.Entry(entity);
                 deletedEntity.State = EntityState.Deleted;
@@ -33,7 +33,7 @@ namespace DataAccess.Concrete.EntityFramework
 
         public Color Get(Expression<Func<Color, bool>> filter)
         {
-            using (NewNorthwindContext context = new NewNorthwindContext())
+            using (RentCarDbContext context = new RentCarDbContext())
             {
                 return context.Set<Color>().SingleOrDefault(filter);
             }
@@ -41,7 +41,7 @@ namespace DataAccess.Concrete.EntityFramework
 
         public List<Color> GetAll(Expression<Func<Color, bool>> filter = null)
         {
-            using (NewNorthwindContext context = new NewNorthwindContext())
+            using (RentCarDbContext context = new RentCarDbContext())
             {
                 return filter == null ?
                         context.Set<Color>().ToList() :
@@ -51,7 +51,7 @@ namespace DataAccess.Concrete.EntityFramework
 
         public void Update(Color entity)
         {
-            using (NewNorthwindContext context = new NewNorthwindContext())
+            using (RentCarDbContext context = new RentCarDbContext())
             {
                 var updatedEntity = context.Entry(entity);
                 updatedEntity.State = EntityState.Modified;

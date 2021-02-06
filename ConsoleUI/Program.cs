@@ -18,8 +18,13 @@ namespace ConsoleUI
             {
                 Console.WriteLine(car.Description);
             }
-            carManager.Add(new Car { CarId = 1, BrandId = 3, DailyPrice = 300000, ColorId = 2, Description = "Bi", ModelYear = 2015 });
-            carManager.Add(new Car { CarId = 2, BrandId = 3, DailyPrice = 0, ColorId = 2, Description = "İkinci", ModelYear = 2015 });
+            Console.WriteLine("----First Added");
+            carManager.Add(new Car { BrandId = 3, DailyPrice = 300000, ColorId = 2, Description = "Bi", ModelYear = 2015 });
+            Console.WriteLine("----Second Added");
+            carManager.Add(new Car { BrandId = 3, DailyPrice = 0, ColorId = 2, Description = "İkinci", ModelYear = 2015 });
+            Console.WriteLine("----Third Added");
+            carManager.Add(new Car { CarId = 1, BrandId = 3, DailyPrice = 3000, ColorId = 2, Description = "Birinci", ModelYear = 2015 });
+
 
 
         }
