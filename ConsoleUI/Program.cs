@@ -14,6 +14,10 @@ namespace ConsoleUI
             CarManager carManager = new CarManager(new EfCarDal());
             BrandManager brandManager = new BrandManager(new EfBrandDal());
             ColorManager colorManager = new ColorManager(new EfColorDal());
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+
+            RentalAdd(rentalManager);
+            RentalDetailsTest(rentalManager);
             //CarDetailsTest(carManager);
             //CarGetAll(carManager);
             //CarGetById(carManager);
@@ -33,6 +37,44 @@ namespace ConsoleUI
             //BrandUpdate(brandManager);
             //BrandDeleted(brandManager);
 
+        }
+
+        private static void RentalDetailsTest(RentalManager rentalManager)
+        {
+            var result = rentalManager.GetRentDetails();
+            if (result.Success)
+            {
+                foreach (var rental in result.Data)
+                {
+                    Console.WriteLine(
+                        rental.FirstName + "/" +
+                        rental.LastName + "/" +
+                        rental.CarId + "/" +
+                        rental.RentalId + "/" +
+                        rental.BrandName + "/" +
+                        rental.ColorName + "/" +
+                        rental.CompanyName + "/" +
+                        rental.Description + "/" +
+                        rental.RentDate + "/" +
+                        rental.ReturnDate);
+                }
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+        }
+
+        private static void RentalAdd(RentalManager rentalManager)
+        {
+
+            rentalManager.Add(new Rental
+            {
+                CarId = 1,
+                CustomerId = 1,
+                RentDate = new DateTime(2021, 02, 13),
+                ReturnDate = new DateTime(2021, 02, 15)
+            });
         }
 
         private static void BrandDeleted(BrandManager brandManager)

@@ -22,6 +22,9 @@ namespace Business.Constants
         public static string ColorDeleted = "Renk silindi";
         public static string ColorListed = "Renk listelendi";
 
-
+        public static string Listed = "Listelendi";
+        public static string Added = "Eklendi";
+        public static string Updated = "Güncellendi";
+        public static string Deleted = "Silindi";
     }
 }
