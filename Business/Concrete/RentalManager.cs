@@ -37,10 +37,10 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Rental>>(result, Messages.Listed);
         }
 
-        public IDataResult<List<Rental>> GetById(int RentalId)
+        public IDataResult<Rental> GetById(int RentalId)
         {
-            var result = _rentalDal.GetAll(s=>s.RentalId== RentalId);
-            return new SuccessDataResult<List<Rental>>(result, Messages.Listed);
+            var result = _rentalDal.Get(s=>s.RentalId== RentalId);
+            return new SuccessDataResult<Rental>(result, Messages.Listed);
         }
 
         public IDataResult<List<RentalDetailDto>> GetRentDetails()
