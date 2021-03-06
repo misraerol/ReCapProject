@@ -26,5 +26,7 @@ namespace Business.Constants
         public static string Added = "Eklendi";
         public static string Updated = "Güncellendi";
         public static string Deleted = "Silindi";
+
+        public static string CarImageLimitExceded= "Bir arabanın en fazla 5 resmi olabilir.";
     }
 }
