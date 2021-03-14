@@ -10,6 +10,7 @@ namespace Business.ValidationRules.FluentValidation
     {
         public CarValidator()
         {
+            RuleFor(C => C.CarId).Empty().WithMessage("Identity olduğu için doldurulamaz");
             RuleFor(c => c.Description).NotEmpty();
             RuleFor(c => c.Description).MinimumLength(2);
             RuleFor(c => c.DailyPrice).NotEmpty();
